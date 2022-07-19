@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence                     http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="Gestion_Park" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>jpa.employe.employe</class>
+    <class>jpa.logiciel.logiciel</class>
+    <class>jpa.memoire.memoire</class>
+    <class>jpa.ordinateur.ordinateur</class>
+    <class>jpa.reseau.reseau</class>
+    <properties>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.SQLiteDialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:Gestion_Park.db"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
+</persistence>
