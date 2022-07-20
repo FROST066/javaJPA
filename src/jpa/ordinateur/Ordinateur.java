@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class Ordinateur implements Serializable {
     
 @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_ordinayeur;
+    private int id_ordinateur;
     private String marque;
     private String processeur;
     private double rom;
@@ -30,7 +30,7 @@ public class Ordinateur implements Serializable {
     }
 
     public int getId_ordinayeur() {
-        return id_ordinayeur;
+        return id_ordinateur;
     }
 
     public String getMarque() {

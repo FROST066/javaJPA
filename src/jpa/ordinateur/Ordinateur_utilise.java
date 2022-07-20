@@ -1,36 +1,54 @@
 package jpa.ordinateur;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import jpa.employe.Employe;
 
-@Entity @Table(name="ORDINATEUR_UTILISE")
-public class Ordinateur_utilise extends Ordinateur_dispo {
+@Entity @Table(name = "ORDINATEUR_UTILISE")
+public class Ordinateur_utilise implements Serializable {
 
-    private int id_employe;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_ordinateur_utilise;
+    private int id_ordinateur;
+    private int matricule;
 
     @ManyToOne
-    @JoinColumn(name = "id_employe", nullable = false)
+    @JoinColumn(name = "matricule", nullable = false,insertable=false, updatable=false)
     private Employe employe;
+
+    public Employe getEmploye() {
+        return this.employe;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "id_ordinateur", nullable = false,insertable=false, updatable=false)
+    private Ordinateur ordinateur;
+
+    public Ordinateur getOrdinateur() {
+        return this.ordinateur;
+    }
 
     public Ordinateur_utilise() {
         this(0, 0);
     }
 
-    public Employe getEmploye(){return this.employe;}
-    public Ordinateur_utilise(int id_ordinateur, int id_employe) {
-        super(id_employe);
-        this.id_employe = id_employe;
+    public Ordinateur_utilise(int id_ordinateur, int matricule) {
+        this.id_ordinateur = id_ordinateur;
+        this.matricule = matricule;
     }
 
-    public int getId_employe() {
-        return id_employe;
+    public int getMatricule() {
+        return matricule;
     }
 
-    public void setId_employe(int id_employe) {
-        this.id_employe = id_employe;
+    public void setMatricule(int matricule) {
+        this.matricule = matricule;
     }
-
 }

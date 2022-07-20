@@ -19,15 +19,13 @@ public class Ordinateur_dispo implements Serializable {
     private int id_ordinateur;
 
     @ManyToOne
-    @JoinColumn(name = "id_ordinateur", nullable = false)
+    @JoinColumn(name = "id_ordinateur", nullable = false,insertable=false, updatable=false)
     private Ordinateur ordinateur;
-
-    public Ordinateur_dispo() {
-        this(0);
-    }
-
     public Ordinateur getOrdinateur() {
         return this.ordinateur;
+      }
+    public Ordinateur_dispo() {
+        this(0);
     }
 
     public Ordinateur_dispo(int id_ordinateur) {
