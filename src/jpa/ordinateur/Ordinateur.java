@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity @Table(name="ORDINATEUR")
-public class ordinateur implements Serializable {
+public class Ordinateur implements Serializable {
     
 @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_ordinayeur;
@@ -17,11 +17,11 @@ public class ordinateur implements Serializable {
     private double ram;
     private double vitesse;
 
-    public ordinateur() {
+    public Ordinateur() {
         this("unknow", "unknow", 0, 0, 0);
     }
 
-    public ordinateur(String marque, String processeur, double rom, double ram, double vitesse) {
+    public Ordinateur(String marque, String processeur, double rom, double ram, double vitesse) {
         this.marque = marque;
         this.processeur = processeur;
         this.ram = ram;
@@ -52,11 +52,7 @@ public class ordinateur implements Serializable {
     public double getVitesse() {
         return vitesse;
     }
-
-    public void setId_ordinayeur(int id_ordinayeur) {
-        this.id_ordinayeur = id_ordinayeur;
-    }
-
+    
     public void setMarque(String marque) {
         this.marque = marque;
     }

@@ -12,7 +12,7 @@ public class reseau implements Serializable {
 @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_reseau;
     private String nom;
-
+    
     public reseau() {
         this("unknow");
     }
@@ -27,10 +27,6 @@ public class reseau implements Serializable {
 
     public String getNom() {
         return nom;
-    }
-
-    public void setId_reseau(int id_reseau) {
-        this.id_reseau = id_reseau;
     }
 
     public void setNom(String nom) {

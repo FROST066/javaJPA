@@ -7,18 +7,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity @Table(name="MEMOIRE")
-public class memoire implements Serializable {
+public class Memoire implements Serializable {
     
 @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_memoire;
     private String nom_memoire;
     private double capacite;
 
-    public memoire() {
+    public Memoire() {
         this("unknow",0);
     }
 
-    public memoire(String nom_memoire, double capacite) {
+    public Memoire(String nom_memoire, double capacite) {
         this.capacite = capacite;
         this.nom_memoire = nom_memoire;
     }
@@ -33,10 +33,6 @@ public class memoire implements Serializable {
 
     public String getNom_memoire() {
         return nom_memoire;
-    }
-
-    public void setId_memoire(int id_memoire) {
-        this.id_memoire = id_memoire;
     }
 
     public void setCapacite(double capacite) {

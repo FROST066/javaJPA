@@ -20,7 +20,7 @@ public class Main {
             EntityTransaction trans = entityManager.getTransaction();
             trans.begin();
             
-            reseau rs = new reseau( "HOUNDJO");
+            reseau rs = new reseau("HOUNDJO");
             entityManager.persist(rs);
         trans.commit();
         } finally {

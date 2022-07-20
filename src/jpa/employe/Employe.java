@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity @Table(name="EMPLOYE")
-public class employe implements Serializable {
+public class Employe implements Serializable {
     
     @Id 
     private String matricule;
@@ -13,11 +13,11 @@ public class employe implements Serializable {
     private String nom_employe;
     private String prenom_employe;
 
-    public employe() {
+    public Employe() {
         this("unknow", "unknow", "unknow", "unknow");
     }
 
-    public employe(String matricule, String mot_de_pass, String nom_employe, String prenom_employe) {
+    public Employe(String matricule, String mot_de_pass, String nom_employe, String prenom_employe) {
         this.matricule = matricule;
         this.mot_de_pass = mot_de_pass;
         this.nom_employe = nom_employe;

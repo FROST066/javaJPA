@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity @Table(name="LOGICIEL")
-public class logiciel implements Serializable {
+public class Logiciel implements Serializable {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_logiciel;
@@ -15,11 +15,11 @@ public class logiciel implements Serializable {
     private String type;
     private String version;
 
-    public logiciel() {
+    public Logiciel() {
         this("unknow", "unknow", "unknow");
     }
 
-    public logiciel(String nom_logiciel, String type, String version) {
+    public Logiciel(String nom_logiciel, String type, String version) {
         this.nom_logiciel = nom_logiciel;
         this.type = type;
         this.version = version;
